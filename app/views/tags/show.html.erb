@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/welcome/index">Hello</a>
+  </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/posts">Posts</a></li>
+      <li><a href="/posts/new">New Posts</a></li>
+      <li><a href="/posts/archives">Archive</a></li>
+      <li><a href="/tags">Tags</a></li>
+      <li><a href="/users">Users</a></li>
+      
+      <li><a href="/users">Sign In</a></li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    </ul>
+    </form>
+  </div>
+</nav>
+
+<p>
+	<strong>Name: </strong>
+	<%= @tag.name %>
+</p>
+<p>
+	<%= link_to 'Back to Index', tags_path, class: 'btn btn-default' %>
+</p>

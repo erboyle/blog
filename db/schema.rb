@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127011539) do
+ActiveRecord::Schema.define(version: 20131127013940) do
 
   create_table "comments", force: true do |t|
     t.string   "commenter"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20131127011539) do
     t.integer  "user_id"
     t.string   "image"
     t.string   "video"
+    t.string   "audio"
   end
 
   create_table "taggings", force: true do |t|

@@ -1,34 +1,8 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/welcome/index">Hello</a>
-  </div>
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/posts">Posts</a></li>
-      <li><a href="/posts/new">New Posts</a></li>
-      <li><a href="/posts/archives">Archive</a></li>
-      <li><a href="/tags">Tags</a></li>
-      <li><a href="/users">Users</a></li>
-      
-      <li><a href="/users">Sign In</a></li>
-      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-    </ul>
-    </form>
-  </div>
-</nav>
-
-
 <div class="row-fluid">
 	<div class="col-md-10">
 		<h1>Posts</h1>
 
-		<% @posts.each do |post| %>
+		<% @post.each do |post| %>
 
 		<article>
 			<h2><%= link_to post.title, post_path(post) %></h2>
@@ -56,7 +30,7 @@
 	<div class="col-md-2">
 		<h1>Tags</h1>
 		<ul style="list-style-type: none; -webkit-padding-start: 0px;">
-		<% @tags.each do |tag| %>
+		<% @tag.each do |tag| %>
 			<li><p class="label label-default"><%= link_to( tag.name, { action: 'tag', tag_id: tag.id }, :style => "color: white;" ) %></p></li>
 		<% end %>
 		</ul>

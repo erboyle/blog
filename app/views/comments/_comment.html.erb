@@ -1,6 +1,7 @@
 <p>
-  <%= comment.commenter %>&nbsp;:&nbsp;
+  <%= comment.user.first_name %>&nbsp;:&nbsp;
   <%= comment.body %><br>
+  <p></p>
   <%= link_to 'Destroy Comment', [comment.post, comment],
   				class: 'btn btn-default',
                 method: :delete,

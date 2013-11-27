@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!
-    
+  
   def new
-    @post = Post.new
+    @post = Post.new    
   end
   
-  def create
-    @post.user = current_user
+  def create      
     @post = Post.new( post_params )
+    @post.user = current_user
     if @post.save
       redirect_to @post
     else
@@ -28,14 +28,14 @@ class PostsController < ApplicationController
     end
   end
   
-  def tag
-    @tag = Tag.find( params[:tag_id] )
-    @posts = @tag.posts
-  end
-  
   def show
     @post = Post.find( params[:id] )
     @tags = Tag.all
+  end
+  
+  def tag
+    @tag = Tag.find( params[:tag_id] )
+    @post = @tag.posts
   end
   
   def add_tag
@@ -52,14 +52,14 @@ class PostsController < ApplicationController
     tagging.destroy
     redirect_to @post
   end
-
+  
   def index
-    @posts = Post.order( 'created_at DESC' ).limit( 5 )
-    @tags = Tag.all
+    @post = Post.order( 'created_at DESC' ).limit( 5 )
+    @tag = Tag.all
   end
   
-  def archives
-    @posts = Post.all.order( 'created_at DESC' )
+  def archive
+    @post = Post.all.order( 'created_at DESC' )
   end
   
   def destroy
@@ -70,7 +70,6 @@ class PostsController < ApplicationController
   
   private
     def post_params
-      params.require(:post).permit( :title, :text )
+      params.require(:post).permit( :title, :text, :image )
     end
-  
-end
+  end  

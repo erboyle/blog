@@ -1,15 +1,21 @@
-<%= image_tag (:file) if :image %>
-<%= video_tag (:file) if :video %>
-<%= audio_tag (:file) if :audio %>
-
-
 <h2><%= @post.title %></h2>
+
+<p>
+<%= image_tag @post.image_url(:medium) if @post.image? %>
+</p>
+<p>
+<%= video_tag @post.video_url if @post.video? %>
+</p>
+
+
 <p>
 	<%= @post.text %>
 </p>
 <p> <%= 'Author: ' + @post.user.first_name %>
 
 <p>Created at <%= @post.created_at %></p>
+
+
 
 <h2>Tags</h2>
 <p>

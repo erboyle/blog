@@ -1,7 +1,27 @@
-
-
 <h1>Edit Post</h1>
 
-<%= render 'form' %>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#text" data-toggle="tab"><span class="glyphicon glyphicon-pencil"></span></a></li>
+  <li><a href="#image" data-toggle="tab"><span class="glyphicon glyphicon-camera"></span></a></li>
+  <li><a href="#video" data-toggle="tab"><span class="glyphicon glyphicon-film"></span></a></li>
+  <li><a href="#audio" data-toggle="tab"><span class="glyphicon glyphicon-music"></span></a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="text"><%= render 'form' %>
+</div>
+  <div class="tab-pane fade" id="image"><%= render 'form_image' %>
+</div>
+  <div class="tab-pane fade" id="video"><%= render 'form_video' %></div>
+  <div class="tab-pane fade" id="audio"><%= render 'form_audio' %></div>
+</div>
+
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+</script>
+
 
 <%= link_to 'Back', posts_path, class: 'btn btn-default' %>
+

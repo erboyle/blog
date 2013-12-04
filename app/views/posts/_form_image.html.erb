@@ -1,11 +1,15 @@
 <%= form_for @post, :html => {:multipart => true} do |f| %>
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :tilte %><br />
+    <%= f.text_field :title, class: 'form-control' %>
   </p>
   <p>
     <%= f.file_field :image %>
   </p>
+  <div class="form-group">
+  	<%= f.label :text %>
+  	<%= f.text_area :text, class: 'form-control', rows: '12' %>
+  </div>
   <p>
     <%= f.label :remote_image_url, "Image URL" %><br />
     <%= f.text_field :remote_image_url %>

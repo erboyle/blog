@@ -9,8 +9,10 @@
 
 <div class="tab-content">
   <div class="tab-pane fade in active" id="text"><%= render 'form' %>
+	  
 </div>
   <div class="tab-pane fade" id="image"><%= render 'form_image' %>
+	 
 </div>
   <div class="tab-pane fade" id="video"><%= render 'form_video' %></div>
   <div class="tab-pane fade" id="audio"><%= render 'form_audio' %></div>
@@ -21,7 +23,6 @@
     $('#myTab a:last').tab('show')
   })
 </script>
-
 
 <%= link_to 'Back', posts_path, class: 'btn btn-default' %>
 

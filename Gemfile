@@ -41,6 +41,7 @@ source 'http://gems.github.com/'
 
 gem 'rmagick', '2.13.2'
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

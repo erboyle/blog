@@ -2,12 +2,13 @@
 <html>
 <head>
   <title>Blog</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	
+<body style="padding-bottom: 70px;" }
+>
+<!-- Header -->
 	<nav class="navbar navbar-default" role="navigation">
 	  <div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -16,7 +17,7 @@
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </button>
-	    <a class="navbar-brand" href="/welcome/index">Hello</a>
+	    <a class="navbar-brand" href="/welcome/index">Fuzzle</a>
 	  </div>
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav">
@@ -25,17 +26,43 @@
 	      <li><a href="/posts/archives">Archive</a></li>
 	      <li><a href="/tags">Tags</a></li>
 	      <li><a href="/users">Users</a></li>
-      
+      </ul>
+  	    <ul class="nav navbar-nav navbar-right">
 	      <li><a href="/users">Sign In</a></li>
 	      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 	    </ul>
 	    </form>
 	  </div>
 	</nav>
-
 	<div class="container">
 		<%= yield %>
 	</div>
+	
+<!-- Footer -->
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+	  <div class="navbar-header">
+	      <span class="sr-only">Toggle navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </button>
+	    <a class="navbar-brand"></a>
+	  </div>
+
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+	    </ul>
+	    <ul class="nav navbar-nav navbar-left">
+	      <li><a>Created by Liz and Katyln</a></li>
+      </ul>
+	    
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><a>December 2013</a></li>
+	      <li><a></a></li>
+	    </ul>
+	  </div><!-- /.navbar-collapse -->
+	</nav>
+	
 
 </body>
 </html>

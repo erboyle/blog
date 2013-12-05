@@ -58,7 +58,7 @@ class PostsController < ApplicationController
     @tag = Tag.all
   end
   
-  def archive
+  def archives
     @post = Post.all.order( 'created_at DESC' )
   end
   

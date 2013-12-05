@@ -6,13 +6,12 @@
   <p>
     <%= f.file_field :image %>
   </p>
+
   <div class="form-group">
   	<%= f.label :text %>
   	<%= f.text_area :text, class: 'form-control', rows: '12' %>
   </div>
-  <p>
-    <%= f.label :remote_image_url, "Image URL" %><br />
-    <%= f.text_field :remote_image_url %>
-  </p>
+  
   <p><%= f.submit class: 'btn btn-primary' %></p>
 <% end %>
+

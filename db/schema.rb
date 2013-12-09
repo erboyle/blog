@@ -38,10 +38,6 @@ ActiveRecord::Schema.define(version: 20131204035658) do
     t.string   "image"
     t.string   "video"
     t.string   "audio"
-    t.string   "audio_file_name"
-    t.string   "audio_content_type"
-    t.integer  "audio_file_size"
-    t.datetime "audio_updated_at"
   end
 
   create_table "taggings", force: true do |t|

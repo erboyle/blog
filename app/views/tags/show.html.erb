@@ -1,8 +1,7 @@
-
 <p>
 	<strong>Name: </strong>
 	<%= @tag.name %>
 </p>
 <p>
-	<%= link_to 'Back to Index', tags_path, class: 'btn btn-default' %>
+	<%= link_to content_tag( :span, nil, class: 'glyphicon glyphicon-arrow-left' ), posts_path, class: 'btn btn-default' %>
 </p>
